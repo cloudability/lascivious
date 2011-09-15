@@ -13,12 +13,12 @@ module Lascivious
   
   # The main kiss metrics javascript & stuff
   def kiss_metrics_tag
-    render :partial => "kiss_metrics/header"
+    render :partial => "lascivious/header"
   end
   
   # The email beacon
   def kiss_metrics_email_beacon(email_address, variation, event_type = "Opened Email")
-    render :partial => "kiss_metrics/email_beacon", :locals => {
+    render :partial => "lascivious/email_beacon", :locals => {
       :event_type => event_type,
       :api_key => kiss_metrics_api_key,
       :email => email_address,
