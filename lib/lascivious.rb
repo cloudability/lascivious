@@ -3,6 +3,8 @@ module Lascivious
   # API key for Kiss Metrics. Available via https://www.kissmetrics.com/settings
   mattr_accessor :api_key
   @@api_key = ""
+  ::ActionView::Base.send(:include, Lascivious)
+  ::ActionController::Base.send(:include, Lascivious)
   
   # For use in config so we can do KissMetrics.setup
   def self.setup
