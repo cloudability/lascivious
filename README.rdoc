@@ -14,7 +14,7 @@ It's a work-in-progress right now and is pretty dumb: you have to RTFM on when t
 1. Install the gem by adding it to your Gemfile
 2. Add an initializer in `config/initializers/kiss_metrics.rb` like:
 
-    KissMetrics.setup do |config|
+    Lascivious.setup do |config|
       config.api_key="0000000000000000000000000000000000000000"
     end
 
@@ -54,7 +54,7 @@ In all cases add this to the HEAD of your layouts:
     
 And define your keys via an initializer in `app/config/initializers/kiss_metrics.rb` like this:
 
-    KissMetrics.setup do |config|
+    Lascivious.setup do |config|
       if Rails.env == 'production'
         config.api_key="2222222222222222222222222222222222222222"
       else

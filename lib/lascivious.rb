@@ -8,7 +8,7 @@ module Lascivious
   ::ActionView::Base.send(:include, Lascivious)
   ::ActionController::Base.send(:include, Lascivious)
   
-  # For use in config so we can do KissMetrics.setup
+  # For use in config so we can do Lascivious.setup
   def self.setup
     yield self
   end
