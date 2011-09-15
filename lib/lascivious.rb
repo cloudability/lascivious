@@ -1,3 +1,5 @@
+require 'engine'
+
 module Lascivious
   
   # API key for Kiss Metrics. Available via https://www.kissmetrics.com/settings
