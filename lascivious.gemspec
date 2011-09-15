@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{lascivious}
-  s.version = "0.1.0.pre4"
+  s.version = "0.1.0.pre5"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mat Ellis"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "app/views/lascivious/_email_beacon.html.erb",
     "app/views/lascivious/_header.html.erb",
     "lascivious.gemspec",
+    "lib/engine.rb",
     "lib/lascivious.rb",
     "lib/version.rb",
     "test/helper.rb",
