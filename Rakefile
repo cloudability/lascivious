@@ -15,11 +15,11 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "lascivious"
-  gem.homepage = "http://github.com/mellis/lascivious"
+  gem.homepage = "https://github.com/cloudability/lascivious"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "mat@cloudability.com"
+  gem.summary = %Q{Easy Kiss Metrics integration for Rails}
+  gem.description = %Q{Easy interface between Rails & Javascript for Kiss Metrics}
+  gem.email = "support@cloudability.com"
   gem.authors = ["Mat Ellis"]
   # dependencies defined in Gemfile
 end

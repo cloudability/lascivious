@@ -1,0 +1,16 @@
+<% if kiss_metrics_api_key.blank? -%>
+<!-- ERR: Kiss Metrics API key from https://www.kissmetrics.com/settings must be defined in kiss_metrics_key -->
+<% Rails.logger.warn "Missing Kiss Metrics API Key, set api key from https://www.kissmetrics.com/settings via KissMetrics.api_key" -%>
+<% else -%>
+<script type="text/javascript">
+  var _kmq = _kmq || [];
+  function _kms(u){
+    setTimeout(function(){
+      var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
+      s.src = u; f.parentNode.insertBefore(s, f);
+    }, 1);
+  }
+  _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/<%= kiss_metrics_api_key %>.1.js');
+  <%= kiss_metrics_flash -%>
+</script>
+<% end -%>
