@@ -69,6 +69,6 @@ module Lascivious
   
   # Get kiss metrics key
   def kiss_metrics_api_key
-    return KissMetrics.api_key
+    return Lascivious.api_key
   end
 end
