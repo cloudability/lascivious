@@ -8,7 +8,6 @@ Using a flash mechanism this plugin provides a series of helper functions to all
 
 It's a work-in-progress right now and is pretty dumb: you have to RTFM on when to insert what. We will probably extend functionality to handle aliasing and strong typing of users.
 
-
 == Instructions
 
 1. Install the gem by adding it to your Gemfile
@@ -36,11 +35,10 @@ It's a work-in-progress right now and is pretty dumb: you have to RTFM on when t
 
 Currently the following commands are provided:
 
-- `kiss_record <message>` - adds a 'record' event with a message of 'message'
-- `kiss_metric <event_type> <message>` - adds an event of type 'event_type' with a message of 'message'
+- `kiss_record <event_name>` - adds an 'event_name' event to the queue
+- `kiss_metric <event_name>, <properties>` - adds an 'event_name' event to the queue with properties hash passed through
 
 We will soon add helpers for things like `kiss_alias`, etc.
-
 
 == How to Integrate with your app
 
@@ -61,7 +59,6 @@ And define your keys via an initializer in `app/config/initializers/kiss_metrics
         config.api_key="1111111111111111111111111111111111111111"
       end
     end
-
 
 1. Sign In
 
