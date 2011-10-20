@@ -34,9 +34,9 @@ module Lascivious
     unless messages.blank? || messages.empty?
       return messages.map do |type_hash|
         type_hash.map do |e|
-          %Q{_kmq.push(['#{e.first.to_s}', '#{e.last.to_s}']);}
+          %Q{_kmq.push(['record', '#{e.first.to_s}', #{e.last.to_json}]);}
         end
-      end.flatten.join("\n")
+      end.flatten.join("\n").html_safe
     end
     return nil
   end
