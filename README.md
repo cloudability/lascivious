@@ -1,16 +1,12 @@
 # Lascivious
 
-This plugin simplifies the use of Kiss Metrics with Rails.
+This plugin simplifies the use of KISSmetrics with Rails.
 
-Kiss Metrics really works best with Javascript. The problem is that in Rails
+KISSmetrics really works best with Javascript. The problem is that in Rails
 the best place to decide whether to fire off an event is inside a Controller.
 
 Using a flash mechanism this plugin provides a series of helper functions to
 allow your Controller to inject the correct Javascript into any page.
-
-It's a work-in-progress right now and is pretty dumb: you have to RTFM on when
-to insert what. We will probably extend functionality to handle aliasing and
-strong typing of users.
 
 
 ## Instructions
@@ -25,7 +21,7 @@ end
 ```
 
 3. Replace the zeroes with your API key from <https://www.kissmetrics.com/settings>
-4. Add the kiss metrics tag to whichever layouts you want to use Kiss Metrics
+4. Add `kiss_metrics_tag` to whichever layouts you want to use KISSmetrics
 with, usually all of them, e.g. here's what our header partial looks like:
 
 ```erb
@@ -35,7 +31,7 @@ with, usually all of them, e.g. here's what our header partial looks like:
 <%= kiss_metrics_tag %>
 ```
 
-5. Now all you have to do is add Kiss Metrics tags in controllers or views wherever you need something. For instance:
+5. Now all you have to do is add KISSmetricss tags in controllers or views wherever you need something. For instance:
 
 ```ruby
 class SomeController < ApplicationController
@@ -58,7 +54,7 @@ Currently the following commands are provided:
 ## How to Integrate with your app
 
 Our service is built on Rails 3 with Devise and Inherited Resources. This is
-how we integrated Kiss Metrics into our app.
+how we integrated KISSmetricss into our app.
 
 ### Everywhere
 
@@ -229,7 +225,7 @@ end
 
 Beyond this you're on your own here, sorry.
 
-### Dev vs Prod
+### Development vs Production
 
 If you don't setup two sites - one for prod and the other for dev - your Prod
 site will get polluted with your dev work. Or you can simply disable it. See
@@ -245,12 +241,12 @@ kiss_record "Some Other Event"
 
 You might want to record for instance the first time someone returns to your
 site after they have purchased your product. You can work these events into
-Kiss Metrics really easily, with no setup required on the KM side.
+KISSmetricss really easily, with no setup required on the KM side.
 
 See the API section for more details on what tools you have for doing this.
 
 
-## Contributing to lascivious
+## Contributing to Lascivious
 
 * Check out the latest master to make sure the feature hasn't been implemented
   or the bug hasn't been fixed yet.
@@ -267,7 +263,7 @@ See the API section for more details on what tools you have for doing this.
 
 ## Copyright
 
-Copyright (c) 2011 Cloudability Inc.
+Copyright (c) 2011-2012 Cloudability Inc.
 
-See [[LICENSE]] for further details.
+See LICENSE for further details.
 
