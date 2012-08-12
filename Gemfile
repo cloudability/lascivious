@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 group :development do
-  gem 'rake', '~> 0.9.2'
+  gem 'rake'
   gem 'jeweler', '~> 1.8.4'
 
   platforms :ruby do
