@@ -12,18 +12,58 @@ end
 require 'rake'
 
 require 'jeweler'
-require './lib/version.rb'
+DEVELOPMENT_GROUPS=[:development, :test]
+RUNTIME_GROUPS=Bundler.definition.groups - DEVELOPMENT_GROUPS
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "lascivious"
   gem.homepage = "https://github.com/cloudability/lascivious"
   gem.license = "MIT"
-  gem.summary = %Q{Easy Kiss Metrics integration for Rails}
-  gem.description = %Q{Easy interface between Rails & Javascript for Kiss Metrics}
+  gem.summary = %Q{Easy KISSmetrics integration for Rails}
+  gem.description = %Q{Easy interface between Rails & Javascript for KISSmetrics}
   gem.email = "support@cloudability.com"
-  gem.authors = ["Mat Ellis"]
-  gem.version = Lascivious::Version::STRING
-  # dependencies defined in Gemfile
+  gem.authors = ["Mat Ellis", "Jon Frisby"]
+  gem.extra_rdoc_files = FileList['*.md', 'LICENSE']
+  # gem.required_ruby_version = "> 1.9.2"
+
+  # Jeweler wants to manage dependencies for us when there's a Gemfile.
+  # We override it so we can skip development dependencies, and so we can
+  # do lockdowns on runtime dependencies while letting them float in the
+  # Gemfile.
+  #
+  # This allows us to ensure that using Friston as a gem will behave how
+  # we want, while letting us handle updating dependencies gracefully.
+  #
+  # The lockfile is already used for production deployments, but NOT having
+  # it be obeyed in the gemspec meant that we needed to add explicit
+  # lockdowns in the Gemfile to avoid having weirdness ensue in GUI.
+  #
+  # This is probably a not particularly great way of handling this, but it
+  # should suffice for now.
+  gem.dependencies.clear
+
+  Bundler.load.dependencies_for(*RUNTIME_GROUPS).each do |dep|
+    # gem.add_dependency dep.name, *dependency.requirement.as_list
+    # dev_resolved = Bundler.definition.specs_for(DEVELOPMENT_GROUPS).select { |spec| spec.name == dep.name }.first
+    runtime_resolved = Bundler.definition.specs_for(Bundler.definition.groups - DEVELOPMENT_GROUPS).select { |spec| spec.name == dep.name }.first
+    if(!runtime_resolved.nil?)
+      gem.add_dependency(dep.name, ">= #{runtime_resolved.version}")
+    else
+      # In gem mode, we don't want/need dev tools that would be useful for
+      # mucking with the Optimizer itself...
+      #gem.add_development_dependency(dep.name, "~> #{dev_resolved.version}")
+    end
+  end
+
+  gem.files.reject! do |fn|
+    fn =~ /^.rvmrc/ ||
+    fn =~ /^Gemfile.*/ ||
+    fn =~ /^Rakefile/ ||
+    fn =~ /^VERSION/ ||
+    fn =~ /^\.document/ ||
+    fn =~ /^\.yardopts/ ||
+    fn =~ /^vendor\/cache/
+  end
 end
 Jeweler::RubygemsDotOrgTasks.new
 
