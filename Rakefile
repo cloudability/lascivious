@@ -61,6 +61,14 @@ Jeweler::Tasks.new do |gem|
 end
 Jeweler::RubygemsDotOrgTasks.new
 
+desc "delete generated files"
+task :clobber do
+  sh %q{find . -name "*.rbc" | xargs rm}
+  sh 'rm -rf pkg'
+  sh 'rm -rf .yardoc'
+  sh 'rm -rf doc'
+end
+
 require 'yard'
 YARD::Rake::YardocTask.new do |t|
   # t.files   = ['features/**/*.feature', 'features/**/*.rb', 'lib/**/*.rb']
