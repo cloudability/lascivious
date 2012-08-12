@@ -67,6 +67,12 @@ Jeweler::Tasks.new do |gem|
 end
 Jeweler::RubygemsDotOrgTasks.new
 
+require 'yard'
+YARD::Rake::YardocTask.new do |t|
+  # t.files   = ['features/**/*.feature', 'features/**/*.rb', 'lib/**/*.rb']
+  # t.options = ['--any', '--extra', '--opts'] # optional
+end
+
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
