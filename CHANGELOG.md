@@ -1,9 +1,23 @@
 ### dev
-[full changelog](http://github.com/Cloudability/lascivious/compare/v1.0.0...master)
+[full changelog](http://github.com/Cloudability/lascivious/compare/v1.0.1...master)
 
-Changes
 
-* Updating documentation.
+### v1.0.1
+[full changelog](http://github.com/Cloudability/lascivious/compare/v1.0.0...v1.0.1)
+
+Fixes
+
+* Forgot to update changelog.
+
+
+### v1.0.0
+[full changelog](http://github.com/Cloudability/lascivious/compare/v0.1.0...v1.0.0)
+
+Fixes
+
+* Overhaul documentation.
+* Remove cruft.
+* Change how we use Jeweler to update the gem
 
 
 ### v0.1.0
