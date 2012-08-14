@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mat Ellis", "Jon Frisby"]
-  s.date = "2012-08-12"
+  s.date = "2012-08-14"
   s.description = "Easy interface between Rails & Javascript for KISSmetrics"
   s.email = "support@cloudability.com"
   s.extra_rdoc_files = [
