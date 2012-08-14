@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source :gemcutter
 
 group :development do
   gem 'rake'
